@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Nuget Specification">
+    <Version>1.0.0</Version>
+    <PackageId>Encryption</PackageId>
+    <Company>RegotiPawan</Company>
+    <Authors>RegotiPawan</Authors>
+    <Description>Performs Encryption</Description>
+    <RepositoryUrl>https://github.com/PawanRegoti/Encryption</RepositoryUrl>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+</Project>
