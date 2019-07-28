@@ -6,8 +6,8 @@ namespace Encryption.StringEncryption
   static class AlgorithmCore
   {
     internal static RijndaelManaged GetAlgorithm(
-      string initializationVector = "User password IV", 
-      string secretKey = "TheSecretKeymg5x8qc39k7c3p9JUnnZ")
+      string initializationVector = "Light Weight- IV", 
+      string secretKey = "TheSecretKeypg6z8qc49k8d3p9JVwnT")
     {
       RijndaelManaged algorithm = new RijndaelManaged
       {

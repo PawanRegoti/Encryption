@@ -1,5 +1,7 @@
 using Encryption.StringEncryption;
 using FluentAssertions;
+using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace Encryption.Test
@@ -7,12 +9,12 @@ namespace Encryption.Test
   public class StringEncryptorTests
   {
     [Theory]
-    [InlineData("sample", "THmA9/ZDI+cuR/fiE8f56g==")]
-    [InlineData("Sample", "pTpTOSpIcS40Fshkiv9ztw==")]
-    [InlineData("Sample123", "uhUEUgf07XGCmwQSIx5VDg==")]
-    [InlineData("Sample#123", "iDQjVP6/wzufepSz86NwLw==")]
-    [InlineData("12345", "yIlLjNFTHQ4bjlYc+xDNPA==")]
-    [InlineData("Qhx0ObpQA4rRNNEFYYdHkcUZ", "0C8QS5A5OrU90Z3TTsnUPaBlCfXogayqQCahe1wFSb8=")]
+    [InlineData("12345", "Wd3tp1ciYflcI96Y/QdHaw==")]
+    [InlineData("sample", "sI5hHnj3QPWj/8OT/exP3w==")]
+    [InlineData("Sample", "N5BzjF4op/u1uFI4AUhKoA==")]
+    [InlineData("Sample123", "QQgxZ8zODkdGPZ67cHnElg==")]
+    [InlineData("Sample#123", "Jj+9AxgLpAaKw6/Bwyi+/Q==")]
+    [InlineData("Qhx0ObpQA4rRNNEFYYdHkcUZ", "rDY0+Uw9B56W0njVEe3bOUuqSM2W2sIlXtJ04fURRXI=")]
     public void EncryptorTests(string value, string expectedValue)
     {
       //Arrange
@@ -25,12 +27,12 @@ namespace Encryption.Test
     }
 
     [Theory]
-    [InlineData("THmA9/ZDI+cuR/fiE8f56g==", "sample")]
-    [InlineData("pTpTOSpIcS40Fshkiv9ztw==", "Sample")]
-    [InlineData("uhUEUgf07XGCmwQSIx5VDg==", "Sample123")]
-    [InlineData("iDQjVP6/wzufepSz86NwLw==", "Sample#123")]
-    [InlineData("yIlLjNFTHQ4bjlYc+xDNPA==", "12345")]
-    [InlineData("0C8QS5A5OrU90Z3TTsnUPaBlCfXogayqQCahe1wFSb8=", "Qhx0ObpQA4rRNNEFYYdHkcUZ")]
+    [InlineData("Wd3tp1ciYflcI96Y/QdHaw==", "12345")]
+    [InlineData("sI5hHnj3QPWj/8OT/exP3w==", "sample")]
+    [InlineData("N5BzjF4op/u1uFI4AUhKoA==", "Sample")]
+    [InlineData("QQgxZ8zODkdGPZ67cHnElg==", "Sample123")]
+    [InlineData("Jj+9AxgLpAaKw6/Bwyi+/Q==", "Sample#123")]
+    [InlineData("rDY0+Uw9B56W0njVEe3bOUuqSM2W2sIlXtJ04fURRXI=", "Qhx0ObpQA4rRNNEFYYdHkcUZ")]
     public void DecryptorTests(string value, string expectedValue)
     {
       //Arrange
@@ -41,5 +43,15 @@ namespace Encryption.Test
       //Assert
       result.Should().Be(expectedValue);
     }
+
+    //private IEnumerable<Tuple<string, string>> testData = new List<Tuple<string, string>>
+    //{
+    //  new Tuple<string, string>("12345", "Wd3tp1ciYflcI96Y/QdHaw=="),
+    //  new Tuple<string, string>("sample", "sI5hHnj3QPWj/8OT/exP3w=="),
+    //  new Tuple<string, string>("Sample", "N5BzjF4op/u1uFI4AUhKoA=="),
+    //  new Tuple<string, string>("Sample123", "QQgxZ8zODkdGPZ67cHnElg=="),
+    //  new Tuple<string, string>("Sample#123", "Jj+9AxgLpAaKw6/Bwyi+/Q=="),
+    //  new Tuple<string, string>("Qhx0ObpQA4rRNNEFYYdHkcUZ", "rDY0+Uw9B56W0njVEe3bOUuqSM2W2sIlXtJ04fURRXI="),
+    //};
   }
 }
